@@ -68,5 +68,58 @@ jQuery(document).ready(function($) {
     /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
     GitHubActivity.feed({ username: "mdo", selector: "#ghfeed" });
 
+    var map = AmCharts.makeChart
+        ("mapdiv",
+                {
+                    type: "map",
+                    theme: "dark",
+                    projection: "mercator",
+                    panEventsEnabled : true,
+                    backgroundColor : "#ffffff",
+                    backgroundAlpha : 1,
+                    zoomControl: {
+                    zoomControlEnabled : true
+                },
+                dataProvider : 
+                {
+                    map : "worldHigh",
+                    getAreasFromMap : true,
+                    areas :
+                    [
+                        {
+                            "id": "US",
+                            "showAsSelected": true
+                        },
+                        {
+                            "id": "MY",
+                            "showAsSelected": true
+                        },
+                        {
+                            "id": "SG",
+                            "showAsSelected": true
+                        },
+                        {
+                            "id": "TH",
+                            "showAsSelected": true
+                        },
+                        {
+                            "id": "VN",
+                            "showAsSelected": true
+                        }
+                    ]
+                },
+                areasSettings : 
+                {
+                    autoZoom : true,
+                    color : "#B4B4B7",
+                    colorSolid : "#84ADE9",
+                    selectedColor : "#90C884",
+                    outlineColor : "#888888",
+                    rollOverColor : "#CCE295",
+                    rollOverOutlineColor : "#000000"
+                }
+            }
+        );
+
 
 });
